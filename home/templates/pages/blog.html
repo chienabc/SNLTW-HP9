@@ -1,0 +1,63 @@
+
+
+<section id = "collection" class = "py-5">
+    <div class = "container">
+        <div class = "title text-center">
+            <h2 class = "position-relative d-inline-block">New Collection</h2>
+        </div>
+
+        <div class = "row g-0">
+            <div class = "d-flex flex-wrap justify-content-center mt-5 filter-button-group">
+                <button type = "button" class = "btn m-2 text-dark active-filter-btn" data-filter = "*">All</button>
+                <button type = "button" class = "btn m-2 text-dark" data-filter = ".best">Best Sellers</button>
+                <button type = "button" class = "btn m-2 text-dark" data-filter = ".feat">Featured</button>
+                <button type = "button" class = "btn m-2 text-dark" data-filter = ".new">New Arrival</button>
+            </div>
+
+            <div class = "collection-list mt-4 row gx-0 gy-3">
+                {% for x in mymembers %}
+                <div class = "col-md-6 col-lg-4 col-xl-3 p-2 best">
+                    <div class = "collection-img position-relative">
+                        <div class="card" style="width: 17rem;">
+                            <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
+                          </div>
+                        <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                    </div>
+                    <div class = "text-center">
+                        <div class = "rating mt-3">
+                            <span class = "text-primary"><i class = "fas fa-star"></i></span>
+                            <span class = "text-primary"><i class = "fas fa-star"></i></span>
+                            <span class = "text-primary"><i class = "fas fa-star"></i></span>
+                            <span class = "text-primary"><i class = "fas fa-star"></i></span>
+                            <span class = "text-primary"><i class = "fas fa-star"></i></span>
+                        </div>
+                        <p class = "text-capitalize my-1">{{ x.name }}</p>
+                        <span class = "fw-bold"><b>$ {{ x.price }}</b></span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+        {% comment %} <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#"  class="active" >1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+
+          </div> {% endcomment %}
+
+    </div>
+        {% comment %} {% for x in mymembers %}
+        <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.price }}</td>
+        <td>{{ x.amount }}</td>
+        </tr>
+        {% endfor %} {% endcomment %}
+  
+</section>
